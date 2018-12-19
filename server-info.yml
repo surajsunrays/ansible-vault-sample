@@ -1,0 +1,10 @@
+#filename: server-info.yml
+#This playbook is used to read the information from vault-info.yml file
+- name: server-info.yml
+  hosts: localhost
+  tasks:
+    - include_vars: vault-details.yml
+    - name: Printing the Server information
+      debug:
+        msg: "Username is {{ user }} Password : {{ pass }} and host: {{ host }}"
+    
